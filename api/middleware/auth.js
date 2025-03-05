@@ -33,7 +33,7 @@ export const protectRoute = async (req, res, next) => {
       return res.status(401).json({
         success: false,
         message: "User not found",
-      });
+    });
     }
 
     // Attach the user to the request object
@@ -41,7 +41,7 @@ export const protectRoute = async (req, res, next) => {
 
     // Proceed to the next middleware or route handler
     next();
-  } catch (error) {
+} catch (error) {
     console.log("Error in auth middleware: ", error);
 
     // Handle JWT errors specifically
