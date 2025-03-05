@@ -79,22 +79,11 @@ export const login = async (req, res) => {
 		  success: false,
 		  message: "Invalid email or password",
 		});
-	  }
-  
-	  // Add password validation here
-	//   const isPasswordValid = await bcrypt.compare(password, user.password);
-	//   // OR if you're using a different password verification method
-	  
-	//   if (!isPasswordValid) {
-	// 	return res.status(401).json({
-	// 	  success: false,
-	// 	  message: "Invalid email or password",
-	// 	});
-	//   }
-  
-	  const token = signToken(user.id);
-  
-	  res.cookie("jwt", token, {
+	}
+
+	const token = signToken(user.id);
+
+	res.cookie("jwt", token, {
 		maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days in milliseconds
 		httpOnly: true, // prevents XSS attacks
 		sameSite: "strict", // prevents CSRF attacks
