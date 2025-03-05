@@ -89,7 +89,7 @@ export const login = async (req, res) => {
 		sameSite: "strict", // prevents CSRF attacks
 		secure: process.env.NODE_ENV === "production",
 	  });
-  
+
 	  res.status(200).json({
 		success: true,
 		user: { id: user.id, email: user.email },
