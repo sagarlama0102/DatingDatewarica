@@ -63,6 +63,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
+
 // Start server only if database connection is successful
 connectDB()
   .then(() => {
