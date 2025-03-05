@@ -9,7 +9,7 @@ export const updateProfile = async (req, res) => {
 		let updatedData = otherData;
 
 		if (image) {
-			
+			// base64 format
 			if (image.startsWith("data:image")) {
 				try {
 					const uploadResponse = await cloudinary.uploader.upload(image);
