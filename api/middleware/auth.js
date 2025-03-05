@@ -27,10 +27,9 @@ export const protectRoute = async (req, res, next) => {
     console.log(decoded);
     console.log(decoded.id);
 
-    // Find the user by the decoded ID
     const currentUser = await User.findByPk(decoded.id);
     if (!currentUser) {
-      return res.status(401).json({
+    return res.status(401).json({
         success: false,
         message: "User not found",
     });
